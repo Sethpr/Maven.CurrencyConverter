@@ -6,4 +6,5 @@ public interface ConvertableCurrency {
         return currencyType.getRate()/getRate();
     }
     Double getRate();
+    CurrencyType getType();
 }

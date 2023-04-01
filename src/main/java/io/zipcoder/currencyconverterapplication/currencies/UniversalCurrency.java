@@ -10,4 +10,9 @@ public class UniversalCurrency implements ConvertableCurrency {
     public Double getRate() {
         return type.getRate();
     }
+
+    @Override
+    public CurrencyType getType() {
+        return type;
+    }
 }
