@@ -24,7 +24,15 @@ public enum CurrencyType {
         return rate;
     }
 
+
     public static CurrencyType getTypeOfCurrency(ConvertableCurrency currency) {
-        return currency.getType();
+        final String expectedCurrencyName = currency.getClass().getSimpleName();
+        for(CurrencyType currencyType : values()) {
+            final String currencyTypeName = currencyType.name().replaceAll("_", "");
+            if(currencyTypeName.equalsIgnoreCase(expectedCurrencyName)) {
+                return currencyType;
+            }
+        }
+        return null;
     }
 }
